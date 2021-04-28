@@ -2,6 +2,7 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+    touch-action:manipulation;
 }
 body{
     height:100vh;
@@ -87,6 +88,7 @@ body{
 }
 @media only screen and (max-width: 1024px) {
     .main-container{
+       
         width: 100vw;
         height: 900px;
         background-color:transparent;
