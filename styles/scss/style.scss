@@ -18,12 +18,12 @@ $primary-text:white;
         .main_container{
             @include display_as_column_center();
             .game_board_container{
-                margin-top: 50px;
+                // margin-top: 50px;
 
                 border:15px solid white;
                 #game-board{
-                    width:700px;
-                    height: 700px;
+                    width:600px;
+                    height: 600px;
                     background:$secondry-background;
                     display:grid;
                     grid-template-columns: repeat(30,1fr);
@@ -81,6 +81,7 @@ $primary-text:white;
             position: absolute;
             top:0;
             @include display_as_column_center();
+            display: none;
             .end_game_board{
                 background:rgb(2, 2, 66);
                 padding:2rem;
@@ -103,5 +104,103 @@ $primary-text:white;
             }
         }
        
+    }
+}
+
+
+@media only screen and(max-width:1024px){
+    body{
+        .main_container{
+            .game_board_container{
+                #game-board{
+                    width:700px;
+                    height:700px;
+                }
+            }
+            .score_container{
+                position:relative;
+                div{
+                    width:auto;
+                    font-size: 40px;
+                    padding:1rem;
+                }
+            }
+            .controller_container{
+                display: flex !important;
+                width:100%;
+                @include display_as_row_center();
+                .controllers{
+                    @include display_as_column_center();
+                    background:white;
+                    width:200px;
+                    height: 200px;
+                    border-radius: 50%;
+                    div{
+                        width:200px;
+                        @include display_as_row_center();
+                        button{
+                            border:none;
+                            outline:none;
+
+                            background:$primary-background;
+                            color:$primary-text;
+                            font-size: 25px;
+                            font-weight: light;
+                            // @include display_as__center();
+                            width:50px;
+                            height: 50px;
+                        
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and(max-width:740px){
+    body{
+        .main_container{
+            .game_board_container{
+                border:10px solid white;
+                #game-board{
+                    width:95vw;
+                    height:95vw;
+                }
+            }
+            .score_container{
+                div{
+                    font-size: 7vmin;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and(max-width:450px){
+    body{
+        overflow: hidden;
+        .main_container{
+            .score_container{
+                div{
+                    font-size: 20px;
+                }
+            }
+            .controller_container{
+                .controllers{
+                    background:transparent;
+                    width:150px;
+                    height: 150px;
+                    // display: none;
+                    div{
+                        button{
+                            background:$secondry-background;
+                            color:$primary-background;
+                        }
+                    }
+                }
+            }
+        }
+        
     }
 }

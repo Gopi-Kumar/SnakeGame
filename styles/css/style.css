@@ -17,12 +17,11 @@
   align-items: center;
 }
 * body .main_container .game_board_container {
-  margin-top: 50px;
   border: 15px solid white;
 }
 * body .main_container .game_board_container #game-board {
-  width: 700px;
-  height: 700px;
+  width: 600px;
+  height: 600px;
   background: #C4C4C4;
   display: grid;
   grid-template-columns: repeat(30, 1fr);
@@ -77,6 +76,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  display: none;
 }
 * body .game_end_board_container .end_game_board {
   background: #020242;
@@ -97,6 +97,85 @@
   padding: 10px 20px;
   font-size: 25px;
   margin: 10px;
+}
+
+@media only screen and (max-width: 1024px) {
+  body .main_container .game_board_container #game-board {
+    width: 700px;
+    height: 700px;
+  }
+  body .main_container .score_container {
+    position: relative;
+  }
+  body .main_container .score_container div {
+    width: auto;
+    font-size: 40px;
+    padding: 1rem;
+  }
+  body .main_container .controller_container {
+    display: flex !important;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  body .main_container .controller_container .controllers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+  body .main_container .controller_container .controllers div {
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  body .main_container .controller_container .controllers div button {
+    border: none;
+    outline: none;
+    background: #080159;
+    color: white;
+    font-size: 25px;
+    font-weight: light;
+    width: 50px;
+    height: 50px;
+  }
+}
+@media only screen and (max-width: 740px) {
+  body .main_container .game_board_container {
+    border: 10px solid white;
+  }
+  body .main_container .game_board_container #game-board {
+    width: 95vw;
+    height: 95vw;
+  }
+  body .main_container .score_container div {
+    font-size: 7vmin;
+  }
+}
+@media only screen and (max-width: 450px) {
+  body {
+    overflow: hidden;
+  }
+  body .main_container .score_container div {
+    font-size: 20px;
+  }
+  body .main_container .controller_container .controllers {
+    background: transparent;
+    width: 150px;
+    height: 150px;
+  }
+  body .main_container .controller_container .controllers div button {
+    background: #C4C4C4;
+    color: #080159;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -47,7 +47,7 @@ function checkDeath() {
 const startNewGameButton = document.querySelector("#startNewGame")
 
 startNewGameButton.addEventListener("click", ()=>{
-  window.location = '/';
+  window.location.href = "/"
 })
 
 
