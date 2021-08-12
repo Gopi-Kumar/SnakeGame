@@ -1,7 +1,7 @@
-const gameEndedBoard = document.querySelector(".end_game_board");
+const gameEndedBoard = document.querySelector(".game_end_board_container");
 
 export function showGameEndedBoard(){
-    gameEndedBoard.style.display="block"
+    gameEndedBoard.style.display="flex"
 }
 
 export function startNewGame(){

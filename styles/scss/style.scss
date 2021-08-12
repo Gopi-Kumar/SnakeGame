@@ -1,0 +1,107 @@
+@import './utills.scss';
+@import url('https://fonts.googleapis.com/css2?family=Sedgwick+Ave+Display&display=swap');
+$current-score-text : #FFC806;
+$high-score-text:#FF0000;
+$primary-background:#080159;
+$secondry-background:#C4C4C4;
+$primary-text:white;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Sedgwick Ave Display', cursive;
+    body{
+        height:100vh;
+        width:100vw;
+        background:$primary-background;
+        .main_container{
+            @include display_as_column_center();
+            .game_board_container{
+                margin-top: 50px;
+
+                border:15px solid white;
+                #game-board{
+                    width:700px;
+                    height: 700px;
+                    background:$secondry-background;
+                    display:grid;
+                    grid-template-columns: repeat(30,1fr);
+                    grid-template-rows:repeat(30,1fr);
+                    .snake{
+                        background:black;
+                        &:nth-child(1){
+                            border-radius: 20%;
+                        }
+                    }
+                    
+                    .food{
+                       background:$high-score-text;
+                       border-radius: 50%; 
+                    }
+                }
+            }
+            .score_container{
+                width:80%;
+                @include display_as_row_space_between();
+                position:absolute;
+                div{
+                    @include display_as_column_center();
+                    font-size: 50px;
+                    padding:10px;
+                    width:100px;
+                    p{
+                    text-align: center;
+                        &:nth-child(1){
+                            color:$current-score-text;
+                        }
+                        &:nth-child(2){
+                            color:$primary-text;
+                        }
+
+                    }
+                    &:nth-child(2){
+                        p{
+                            &:nth-child(1){
+                                color:$high-score-text;
+                            }
+                        }
+
+
+                    }
+
+                }
+
+            }
+        }
+        .game_end_board_container{
+            width:100vw;
+            height: 100vh;
+            background:rgba(26, 4, 105, 0.801);
+            position: absolute;
+            top:0;
+            @include display_as_column_center();
+            .end_game_board{
+                background:rgb(2, 2, 66);
+                padding:2rem;
+                border-radius: 10px;
+                width:300px;
+                text-align: center;
+                font-size: 25px;
+                color:$secondry-background;
+                #gameEnded{
+                    font-size: 50px;
+                    color:$high-score-text;
+                }
+                button{
+                    cursor: pointer;
+                    background:$current-score-text;
+                    padding:10px 20px;
+                    font-size: 25px;
+                    margin:10px;
+                }
+            }
+        }
+       
+    }
+}

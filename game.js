@@ -2,19 +2,21 @@ import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, getSnakeHead, sn
 import { update as updateFood, draw as drawFood } from './food.js'
 import { outsideGrid } from './grid.js'
 import  { showGameEndedBoard, startNewGame } from './board.js'
+import {setHighScore, getAndSetHighScore} from './score.js'
 let lastRenderTime = 0
 let gameOver = false
 const gameBoard = document.getElementById('game-board')
-
+getAndSetHighScore();
 function main(currentTime) {
   if (gameOver) {
+    setHighScore();
     showGameEndedBoard();
-    
     return
   }
 
 
-  window.requestAnimationFrame(main)
+  window.requestAnimationFrame(main);
+
   const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000
   if (secondsSinceLastRender < 1 / SNAKE_SPEED) return
 
