@@ -76,7 +76,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  display: none;
 }
 * body .game_end_board_container .end_game_board {
   background: #020242;

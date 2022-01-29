@@ -1,11 +1,20 @@
 import { update as updateSnake, draw as drawSnake, SNAKE_SPEED, getSnakeHead, snakeIntersection } from './snake.js'
 import { update as updateFood, draw as drawFood } from './food.js'
 import { outsideGrid } from './grid.js'
-import  { showGameEndedBoard, startNewGame } from './board.js'
+import  { showGameEndedBoard, hideGameEndedBoard } from './board.js'
 import {setHighScore, getAndSetHighScore} from './score.js'
 let lastRenderTime = 0
 let gameOver = false
 const gameBoard = document.getElementById('game-board')
+
+
+
+
+// var elem = document.documentElement;
+// elem.requestFullscreen().catch(err => {
+//   console.log(err)
+// })
+
 getAndSetHighScore();
 function main(currentTime) {
   if (gameOver) {
@@ -47,7 +56,7 @@ function checkDeath() {
 const startNewGameButton = document.querySelector("#startNewGame")
 
 startNewGameButton.addEventListener("click", ()=>{
-  window.location.href = "/"
+  window.location.href = "/"  
 })
 
 

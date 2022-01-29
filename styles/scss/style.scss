@@ -81,7 +81,7 @@ $primary-text:white;
             position: absolute;
             top:0;
             @include display_as_column_center();
-            display: none;
+            // display: none;
             .end_game_board{
                 background:rgb(2, 2, 66);
                 padding:2rem;
