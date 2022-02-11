@@ -18,6 +18,7 @@ const gameBoard = document.getElementById('game-board')
 getAndSetHighScore();
 function main(currentTime) {
   if (gameOver) {
+    document.getElementById("dieSound").play();
     setHighScore();
     showGameEndedBoard();
     return

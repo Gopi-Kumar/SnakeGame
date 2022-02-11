@@ -2,23 +2,24 @@
 // console.log(highScoreLine)
 export function updateScore(score){
    let scoreValue = document.getElementById('current_score_value');
-   console.log(scoreValue)
    scoreValue.innerText =  score;
 }
 
 export function setHighScore(){
-   let scoreValue = document.getElementById('current_score_value');
-   console.log(scoreValue.innerText)
-  
-
+   let scoreValue = document.getElementById('current_score_value').innerText;
    let highScore = localStorage.getItem("snake-game-highscore");
-   console.log("high score form localstorage ",highScore)
    if(highScore == null){
-      highScore = 0;
+      localStorage.setItem("snake-game-highscore", scoreValue)
    }
-   if(highScore < scoreValue){
-      localStorage.setItem("snake-game-highscore", scoreValue.innerText)
+
+   if(Number(highScore) < Number(scoreValue)){
+      console.log(highScore, scoreValue)
+      console.log(highScore, scoreValue)
+      localStorage.setItem("snake-game-highscore", scoreValue)
    }
+   document.getElementById("currentScore").innerText = "Score : "+scoreValue;
+   document.getElementById("highScore").innerText = "High Score : "+highScore;
+
 }
 
 
@@ -27,5 +28,7 @@ export function getAndSetHighScore(){
    let highScore = localStorage.getItem("snake-game-highscore");
    if(highScore != null){
       highScoreValue.innerText = highScore;;
+   }else{
+      highScoreValue.innerText = 0;
    }
 }

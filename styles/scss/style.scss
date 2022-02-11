@@ -15,10 +15,10 @@ $primary-text:white;
         height:100vh;
         width:100vw;
         background:$primary-background;
+        overflow: hidden;
         .main_container{
             @include display_as_column_center();
             .game_board_container{
-                // margin-top: 50px;
 
                 border:15px solid white;
                 #game-board{
@@ -30,9 +30,11 @@ $primary-text:white;
                     grid-template-rows:repeat(30,1fr);
                     .snake{
                         background:black;
+                        border:1.5px solid rgb(1, 213, 1);
                         &:nth-child(1){
                             border-radius: 20%;
                         }
+                      
                     }
                     
                     .food{
@@ -105,6 +107,10 @@ $primary-text:white;
         }
        
     }
+}
+
+audio{
+    display:none;
 }
 
 

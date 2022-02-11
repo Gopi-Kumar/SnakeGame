@@ -1,6 +1,6 @@
 import { getInputDirection } from './input.js';
 import { updateScore } from './score.js'
-export const SNAKE_SPEED = 7;
+export const SNAKE_SPEED = 5;
 const snakeBody = [
     {x : 11, y : 11},
 ];
@@ -29,6 +29,7 @@ export function draw(gameBoard){
 }
 
 export function expandSnake(amount){
+    document.getElementById("eatSound").play()
     newSegments += amount;
     score += 5;
     updateScore(score);
