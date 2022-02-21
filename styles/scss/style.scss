@@ -16,11 +16,13 @@ $primary-text:white;
         width:100vw;
         background:$primary-background;
         overflow: hidden;
+
         .main_container{
             @include display_as_column_center();
-            .game_board_container{
 
+            .game_board_container{
                 border:15px solid white;
+
                 #game-board{
                     width:600px;
                     height: 600px;
@@ -28,12 +30,16 @@ $primary-text:white;
                     display:grid;
                     grid-template-columns: repeat(30,1fr);
                     grid-template-rows:repeat(30,1fr);
+
                     .snake{
-                        background:black;
-                        border:1.5px solid rgb(1, 213, 1);
-                        &:nth-child(1){
-                            border-radius: 20%;
-                        }
+                        background-image: url("../../images/snake_skin.jpg");
+                        background-size:30px 30px;
+
+                        // background:black;
+                        // border:1.5px solid rgb(1, 213, 1);
+                        border-radius: 30%;
+                        // &:nth-child(1){
+                        // }
                       
                     }
                     
@@ -47,11 +53,13 @@ $primary-text:white;
                 width:80%;
                 @include display_as_row_space_between();
                 position:absolute;
+
                 div{
                     @include display_as_column_center();
                     font-size: 50px;
                     padding:10px;
                     width:100px;
+
                     p{
                     text-align: center;
                         &:nth-child(1){
